@@ -1,0 +1,14 @@
+## UAT Scenario – Inventory Module
+
+Scenario 1:
+User can create stock adjustment with valid data
+
+Expected Result:
+System saves data and updates inventory report
+
+
+Scenario 2:
+User can create stock adjusment per location
+
+Expected Result:
+System saves data and updated inventory per-location listed
