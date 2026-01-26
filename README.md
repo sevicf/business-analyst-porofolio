@@ -23,4 +23,4 @@ JIRA, Confluence, SQL, Excel, ERP System
 
 ## Contact
 www.linkedin.com/in/sevic-f-a1211923b
-+62 812 8209 4294
+| +62 812 8209 4294
