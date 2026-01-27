@@ -1,14 +1,14 @@
-## UAT Scenario – Inventory Module
+## UAT Scenario – Modul Keluar/Masuk Kas RT
 
 Scenario 1:
-User can create stock adjustment with valid data
+Input kas masuk RT
 
 Expected Result:
-System saves data and updates inventory report
+System menyimpan data dan mengupdate laporan kas
 
 
 Scenario 2:
-User can create stock adjusment per location
+Input kas keluar RT
 
 Expected Result:
-System saves data and updated inventory per-location listed
+System menyimpan data dan mengupdate laporan kas
