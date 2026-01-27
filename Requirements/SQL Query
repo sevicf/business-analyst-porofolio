@@ -1,0 +1,11 @@
+-- Query untuk menampilkan pemasukan dan pengeluaran seluruh bulan
+SELECT DATENAME(MONTH, TanggalTrans) AS Periode,TipeTransaksi, SUM (Total) AS Total FROM KasRT
+GROUP BY TipeTransaksi, DATENAME(MONTH, TanggalTrans), MONTH(TanggalTrans)
+ORDER BY MONTH(TanggalTrans)
+
+-- Pemasukkan dan pengeluaran bulanan secara detail
+SELECT DW.NamaWarga, TT.NamaTipeTrans, KT.NamaKategoriTrans, KRT.Kebersihan, KRT.Keamanan, Total, DATENAME (MONTH, PeriodeIuran) AS PeriodeIuran FROM KasRT KRT
+FULL JOIN DataWarga DW ON KRT.WargaId = DW.WargaId
+FULL JOIN KategoriTransaksi KT ON KRT.KategoriTrans = KT.KategoriTransId
+FULL JOIN TipeTransaksi TT ON KRT.TipeTransaksi = TT.TipeTransaksiId
+ORDER BY MONTH(PeriodeIuran)
