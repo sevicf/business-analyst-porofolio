@@ -1,11 +1,38 @@
--- Query untuk menampilkan pemasukan dan pengeluaran seluruh bulan
-SELECT DATENAME(MONTH, TanggalTrans) AS Periode,TipeTransaksi, SUM (Total) AS Total FROM KasRT
-GROUP BY TipeTransaksi, DATENAME(MONTH, TanggalTrans), MONTH(TanggalTrans)
-ORDER BY MONTH(TanggalTrans)
+-- Query to generate monthly cash summary (income and expense)
+SELECT 
+    DATENAME(MONTH, TanggalTrans) AS Period,
+    TipeTransaksi,
+    SUM(Total) AS TotalAmount
+FROM KasRT
+GROUP BY 
+    TipeTransaksi, 
+    DATENAME(MONTH, TanggalTrans), 
+    MONTH(TanggalTrans)
+ORDER BY 
+    MONTH(TanggalTrans);
 
--- Pemasukkan dan pengeluaran bulanan secara detail
-SELECT DW.NamaWarga, TT.NamaTipeTrans, KT.NamaKategoriTrans, KRT.Kebersihan, KRT.Keamanan, Total, DATENAME (MONTH, PeriodeIuran) AS PeriodeIuran FROM KasRT KRT
-FULL JOIN DataWarga DW ON KRT.WargaId = DW.WargaId
-FULL JOIN KategoriTransaksi KT ON KRT.KategoriTrans = KT.KategoriTransId
-FULL JOIN TipeTransaksi TT ON KRT.TipeTransaksi = TT.TipeTransaksiId
-ORDER BY MONTH(PeriodeIuran)
+Description:
+This query is used to display a monthly summary of RT cash transactions, grouped by transaction type (cash in / cash out) and ordered chronologically by month.
+
+
+-- Query to display detailed monthly income and expense transactions
+SELECT 
+    DW.NamaWarga,
+    TT.NamaTipeTrans,
+    KT.NamaKategoriTrans,
+    KRT.Kebersihan,
+    KRT.Keamanan,
+    Total,
+    DATENAME(MONTH, PeriodeIuran) AS Period
+FROM KasRT KRT
+FULL JOIN DataWarga DW 
+    ON KRT.WargaId = DW.WargaId
+FULL JOIN KategoriTransaksi KT 
+    ON KRT.KategoriTrans = KT.KategoriTransId
+FULL JOIN TipeTransaksi TT 
+    ON KRT.TipeTransaksi = TT.TipeTransaksiId
+ORDER BY 
+    MONTH(PeriodeIuran);
+
+Description:
+This query provides detailed monthly cash inflow and outflow data, including resident information, transaction type, transaction category, and contribution details such as cleanliness and security fees.
