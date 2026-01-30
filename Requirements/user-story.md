@@ -1,6 +1,6 @@
-Sebagai seorang bendahara RT , saya ingin punya system yang bisa membantu mempermudah 
-dalam melakukan tugas sebagai bendahara dan mempermudah untuk melihat laporan keluar masuk keuangan RT
+Problem Statement
+As a Neighborhood Treasurer (RT Treasurer), I need a system that can help simplify my financial responsibilities and make it easier to monitor income and expense reports of the neighborhood funds.
 
-Kriteria System :
-1. Laporan bisa langsung tarik periode tertentu
-2. Memiliki UI yang mudah dimengerti untuk input keluar/masuk system
+System Requirements
+1. The system must be able to generate financial reports based on a selected period (e.g., monthly or yearly).
+2. The system must have a simple and user-friendly UI for recording income and expense transactions.
