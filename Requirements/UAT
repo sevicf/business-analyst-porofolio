@@ -1,14 +1,14 @@
-## UAT Scenario – Modul Keluar/Masuk Kas RT
+UAT Scenario – Cash In / Cash Out Module (RT Fund)
 
 Scenario 1:
-Input kas masuk RT
+Record cash inflow (RT income)
 
 Expected Result:
-System menyimpan data dan mengupdate laporan kas
+The system successfully saves the transaction data and updates the cash report accordingly.
 
 
 Scenario 2:
-Input kas keluar RT
+Record cash outflow (RT expense)
 
 Expected Result:
-System menyimpan data dan mengupdate laporan kas
+The system successfully saves the transaction data and updates the cash report accordingly.
